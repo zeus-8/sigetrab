@@ -6,10 +6,7 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
-        Registro de Usuarios
-        <small></small>
-      </h1>
+      <h1>Usuarios</h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
         <li class="active">Here</li>
@@ -25,6 +22,7 @@
         </div>-->
 
         <div class="register-box-body">
+          <div class="box-header whith-border"><h3 class="box-title">Nuevo Usuario</h3></div>
           <!-- <p class="login-box-msg">Nuevo Miembro</p> -->
 
           {!! Form::open(['route'=>'usuario.store', 'method'=>'POST']) !!}
@@ -37,16 +35,24 @@
               <span class="glyphicon glyphicon-user form-control-feedback"></span>
             </div>
             <div class="form-group">
-              {!! Form::text('ci', null, ['class'=>'form-control', 'placeholder'=>'Cedula']) !!}
+              {!! Form::number('ci', null, ['class'=>'form-control', 'placeholder'=>'Cedula']) !!}
               <span class="glyphicon glyphicon-ok form-control-feedback"></span>
             </div>
             <div class="form-group">
-              {!! Form::text('nameUser', null, ['class'=>'form-control', 'placeholder'=>'Nombre de Usuario']) !!}
-              <span class="glyphicon glyphicon-user form-control-feedback"></span>
+              {!! Form::number('telef-Cel', null, ['class'=>'form-control', 'placeholder'=>'Telefono-Cel']) !!}
+              <span class="glyphicon glyphicon-earphone form-control-feedback"></span>
+            </div>
+            <div class="form-group">
+              {!! Form::number('telef-House', null, ['class'=>'form-control', 'placeholder'=>'Telefono-Casa']) !!}
+              <span class="glyphicon glyphicon-earphone form-control-feedback"></span>
             </div>
             <div class="form-group ">
-              {!! Form::text('email', null, ['class'=>'form-control', 'placeholder'=>'E-mail']) !!}
+              {!! Form::email('email', null, ['class'=>'form-control', 'placeholder'=>'E-mail']) !!}
               <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+            <div class="form-group ">
+              {!!Form::select('rol', ['1' => 'Administrador', '2' => 'Profesor', '3' => 'Alumno'], null, ['class'=>'form-control', 'placeholder'=>'--Seleccione--']); !!}
+              <!-- <span class="glyphicon glyphicon-envelope form-control-feedback"></span> -->
             </div>
             <div class="form-group">
               {!! form::submit('Guardar', ['class'=>'btn btn-primary']) !!}

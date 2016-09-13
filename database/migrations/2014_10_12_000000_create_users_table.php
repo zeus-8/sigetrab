@@ -16,12 +16,14 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->string('apellido');
-            $table->integer('ci')->unique();
-            $table->string('name_user');
+            $table->integer('ci')->unique()->unsigned();
+            $table->integer('telef1')->unsigned();
+            $table->integer('telef2')->unsigned();
             $table->string('email')->unique();
-            $table->string('password', 60);
+            $table->string('password');
+            $table->string('name_user');
             $table->boolean('active')->default(true); //con este campo se activa o desactiva al usuario
-            $table->integer('roll'); //con este campo el usuario obtiene los permisos para el sistema
+            $table->integer('rol'); //con este campo el usuario obtiene los permisos para el sistema
             $table->rememberToken();
             $table->timestamps();
         });

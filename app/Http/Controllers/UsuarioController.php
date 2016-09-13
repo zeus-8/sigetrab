@@ -16,7 +16,7 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        //
+        //return view('usuario.query');
     }
 
     /**
@@ -37,12 +37,20 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
+        $user=$request['name'];
+        $u=strtoupper($user[0]).$request['apell'];
         \sigetrab\User::create([
-                'name' => $request['name'],
-                'email' => $request['email'],
-                'password' => bcrypt($request['name']),
+                'nombre' => trim(strtoupper($request['name'])),
+                'apellido' => trim(strtoupper($request['apell'])),
+                'ci' => $request['ci'],
+                'telef1' => $request['telef-Cel'],
+                'telef2' => $request['telef-House'],
+                'email' => trim(strtoupper($request['email'])),
+                'password' => bcrypt($u),
+                'name_user' => $u,
+                'rol' => $request['rol'],
             ]);
-        return "Usuario Registrado";
+        return view('usuario.createDB');
     }
 
     /**
