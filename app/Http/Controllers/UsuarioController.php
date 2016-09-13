@@ -16,7 +16,8 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        //return view('usuario.query');
+        $users=\sigetrab\User::All();
+        return view('usuario.index', compact('users'));
     }
 
     /**
@@ -50,9 +51,8 @@ class UsuarioController extends Controller
                 'name_user' => $u,
                 'rol' => $request['rol'],
             ]);
-        return view('usuario.createDB');
+        return redirect('/usuario')->with('message','store');
     }
-
     /**
      * Display the specified resource.
      *

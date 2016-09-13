@@ -17,6 +17,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   {!!Html::style('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css')!!}
     <!-- Ionicons -->
   {!!Html::style('https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css')!!}
+  <!-- DataTables -->
+  {!! Html::style('/plugins/datatables/dataTables.bootstrap.css') !!}
+  <!-- Select2 -->
+  {!! Html::style('/plugins/select2/select2.min.css') !!}
   <!-- Theme style -->
   {!!Html::style('/dist/css/AdminLTE.min.css')!!}
   <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
@@ -275,7 +279,7 @@ desired effect
       <ul class="sidebar-menu">
         <li class="header"><i class="fa fa-bank" ></i> Menu</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="usuario"><i class="fa fa-users"></i> <span>Usuarios</span></a></li>
+        <li class="active"><a href="usuario.index"><i class="fa fa-users"></i> <span>Usuarios</span></a></li>
         <li><a href="#"><i class="fa fa-barcode"></i> <span>Productos</span></a></li>
         <li><a href="#"><i class="fa fa-graduation-cap"></i> <span>Cursos y Gurpos</span></a></li>
         <li><a href="#"><i class="fa fa-barcode"></i> <span>link</span></a></li>
@@ -331,10 +335,29 @@ desired effect
 <!-- AdminLTE App -->
 {!!Html::script('/dist/js/app.min.js')!!}
 
+<!-- DataTables -->
+{!! Html::script('/plugins/datatables/jquery.dataTables.min.js') !!}
+{!! Html::script('/plugins/datatables/dataTables.bootstrap.min.js') !!}
+
+<!-- Select2 -->
+{!! Html::script('/plugins/select2/select2.full.min.js') !!}
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. Slimscroll is required when using the
      fixed layout. -->
+<script>
+  $(function () {
+    $("#example1").DataTable();
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false
+    });
+  });
+</script>
 </body>
 </html>
