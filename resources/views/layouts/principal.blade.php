@@ -279,7 +279,7 @@ desired effect
       <ul class="sidebar-menu">
         <li class="header"><i class="fa fa-bank" ></i> Menu</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="usuario.index"><i class="fa fa-users"></i> <span>Usuarios</span></a></li>
+        <li class="active"><a href="../"><i class="fa fa-users"></i> <span>Usuarios</span></a></li>
         <li><a href="#"><i class="fa fa-barcode"></i> <span>Productos</span></a></li>
         <li><a href="#"><i class="fa fa-graduation-cap"></i> <span>Cursos y Gurpos</span></a></li>
         <li><a href="#"><i class="fa fa-barcode"></i> <span>link</span></a></li>

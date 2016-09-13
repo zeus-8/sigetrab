@@ -25,15 +25,16 @@
           <div class="box-header whith-border"><h3 class="box-title">Nuevo Usuario</h3></div>
           <!-- <p class="login-box-msg">Nuevo Miembro</p> -->
 
-          {!! Form::open(['route'=>'usuario.store', 'method'=>'POST']) !!}
-            
+          {!! Form::model($user,['route'=>['usuario.update', $user->id], 'method'=>'PUT']) !!}
+             @include('usuario.form.user')
           {!! Form::close() !!}
         </div>
         <!-- /.form-box -->
       </div>
-      @include('usuario.form.user')
+
     </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+
 @stop

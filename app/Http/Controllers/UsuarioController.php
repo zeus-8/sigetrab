@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 
 use sigetrab\Http\Requests;
 use sigetrab\Http\Controllers\Controller;
-
+use sigetrab\User;
+use Session;
+use Redirecct;
 class UsuarioController extends Controller
 {
     /**
@@ -16,7 +18,7 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        $users=\sigetrab\User::All();
+        $users= User::All();
         return view('usuario.index', compact('users'));
     }
 
@@ -38,14 +40,14 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        $user=$request['name'];
-        $u=strtoupper($user[0]).$request['apell'];
-        \sigetrab\User::create([
-                'nombre' => trim(strtoupper($request['name'])),
-                'apellido' => trim(strtoupper($request['apell'])),
+        $user=$request['nombre'];
+        $u=strtoupper($user[0]).strtolower($request['apellido']);
+        User::create([
+                'nombre' => trim(strtoupper($request['nombre'])),
+                'apellidoido' => trim(strtoupper($request['apellido'])),
                 'ci' => $request['ci'],
-                'telef1' => $request['telef-Cel'],
-                'telef2' => $request['telef-House'],
+                'telef1' => $request['telef1'],
+                'telef2' => $request['telef2'],
                 'email' => trim(strtoupper($request['email'])),
                 'password' => bcrypt($u),
                 'name_user' => $u,
@@ -72,7 +74,8 @@ class UsuarioController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        return view('usuario.edit', ['user'=>$user]);
     }
 
     /**
@@ -84,7 +87,11 @@ class UsuarioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::find($id);
+        $user->fill($request->all());
+        $user->save();
+        Session::flash('message', 'Los datos se moldificaron exitosamente');
+        return Redirecct::to('/usuario');
     }
 
     /**

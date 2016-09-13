@@ -1,8 +1,6 @@
 @extends('layouts.principal')
 
-<?php $message=Session::get('message'); ?>
-
-@if ($message == 'store')
+@if (Session::has('message'))
 		<div class="content-wrapper">
 			<section class="content-header">
 				<h1>Guardado de los Datos</h1>
@@ -10,7 +8,7 @@
 			<section class="content">
 				<div class="alert alert-success alert-dismissible">
 	                	<h4><i class="icon fa fa-check"></i> Excelente!!!</h4>
-	                Sus datos fueron guardados exsitosamente
+	                {{Session::get('message')}}
               </div>
 			</section>
 		</div>
@@ -52,20 +50,20 @@
 												<td>{{$user->nombre}}</td>
 												<td>{{$user->apellido}}</td>
 												<td>{{$user->name_user}}</td>
-              
 												<td>
 													<div class="btn-group">
-									                	<button type="button" class="btn btn-default">--Seleccione--</button>
-									                	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+									                	<button type="button" class="btn btn-success">--Seleccione--</button>
+									                	<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
 										                    <span class="caret"></span>
-										                    <span class="sr-only">Toggle Dropdown</span>
+										                    <span class="sr-only"></span>
 									                	</button>
 														<ul class="dropdown-menu" role="menu">
-															<li><a href="#">Consultar</a></li>
-															<li><a href="#">Modificar</a></li>
+															<li>{!! link_to_route('usuario.edit', $title = 'Consultar', $parameters = $user->id, $attributes = null) !!}</li>
+															<li>{!! link_to_route('usuario.edit', $title = 'Modificar', $parameters = $user->id, $attributes = null) !!}</li>
+															<li>{!! link_to_route('usuario.edit', $title = 'Reset Passwod', $parameters = $user->id, $attributes = null) !!}</li>
 															<!-- <li><a href="#"></a></li> -->
 															<li class="divider"></li>
-															<li><a href="#">Inctivar</a></li>
+															<li>{!! link_to_route('usuario.edit', $title = 'Inactivar', $parameters = $user->id, $attributes = null) !!}</li>
 														</ul>
 									                </div>
 												</td>
