@@ -3,6 +3,7 @@
 namespace sigetrab\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Request\UserCreateRequest;
 
 use sigetrab\Http\Requests;
 use sigetrab\Http\Controllers\Controller;
@@ -38,7 +39,7 @@ class UsuarioController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserCreateRequest $request)
     {
         $user=$request['nombre'];
         $u=strtoupper($user[0]).strtolower($request['apellido']);

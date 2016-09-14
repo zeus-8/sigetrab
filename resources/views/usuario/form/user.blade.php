@@ -27,6 +27,7 @@
               <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
             <div class="form-group ">
+              <label>Rol</label>
               {!!Form::select('rol', ['1' => 'Administrador', '2' => 'Profesor', '3' => 'Alumno'], null, ['class'=>'form-control select2', 'placeholder'=>'--Seleccione--']); !!}
               <!-- <span class="glyphicon glyphicon-envelope form-control-feedback"></span> -->
             </div>
