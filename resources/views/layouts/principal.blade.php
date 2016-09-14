@@ -279,24 +279,23 @@ desired effect
       <ul class="sidebar-menu">
         <li class="header"><i class="fa fa-bank" ></i> Menu</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="../"><i class="fa fa-users"></i> <span>Usuarios</span></a></li>
+        <li class="treeview">
+          <a href="#"><i class="fa fa-users"></i> <span>Usuario</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{!! URL::to('/usuario/create') !!}"><i class="fa fa-user-plus">Agregar</i></a></li>
+            <li><a href="{!! URL::to('/usuario') !!}"><i class="fa fa-list-ol">Usuarios</i></a></li>
+          </ul>
+        </li>
         <li><a href="#"><i class="fa fa-barcode"></i> <span>Productos</span></a></li>
         <li><a href="#"><i class="fa fa-graduation-cap"></i> <span>Cursos y Gurpos</span></a></li>
         <li><a href="#"><i class="fa fa-barcode"></i> <span>link</span></a></li>
         <li><a href="#"><i class="fa fa-barcode"></i> <span>link</span></a></li>
         <li><a href="#"><i class="fa fa-barcode"></i> <span>link</span></a></li>
         <li><a href="#"><i class="fa fa-barcode"></i> <span>link</span></a></li>
-        <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#">Link in level 2</a></li>
-            <li><a href="#">Link in level 2</a></li>
-          </ul>
-        </li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>

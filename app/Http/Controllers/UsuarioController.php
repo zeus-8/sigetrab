@@ -8,7 +8,7 @@ use sigetrab\Http\Requests;
 use sigetrab\Http\Controllers\Controller;
 use sigetrab\User;
 use Session;
-use Redirecct;
+use Redirect;
 class UsuarioController extends Controller
 {
     /**
@@ -44,16 +44,18 @@ class UsuarioController extends Controller
         $u=strtoupper($user[0]).strtolower($request['apellido']);
         User::create([
                 'nombre' => trim(strtoupper($request['nombre'])),
-                'apellidoido' => trim(strtoupper($request['apellido'])),
+                'apellido' => trim(strtoupper($request['apellido'])),
                 'ci' => $request['ci'],
                 'telef1' => $request['telef1'],
                 'telef2' => $request['telef2'],
+                'direccion' => trim(strtoupper($request['direccion'])),
                 'email' => trim(strtoupper($request['email'])),
                 'password' => bcrypt($u),
                 'name_user' => $u,
                 'rol' => $request['rol'],
             ]);
-        return redirect('/usuario')->with('message','store');
+        Session::flash('message', 'Los datos se guardaron exitosamente');
+        return Redirect::to('/usuario');
     }
     /**
      * Display the specified resource.
@@ -91,7 +93,7 @@ class UsuarioController extends Controller
         $user->fill($request->all());
         $user->save();
         Session::flash('message', 'Los datos se moldificaron exitosamente');
-        return Redirecct::to('/usuario');
+        return Redirect::to('/usuario');
     }
 
     /**

@@ -1,23 +1,22 @@
 @extends('layouts.principal')
 
-@if (Session::has('message'))
-		<div class="content-wrapper">
-			<section class="content-header">
-				<h1>Guardado de los Datos</h1>
-			</section>
-			<section class="content">
-				<div class="alert alert-success alert-dismissible">
-	                	<h4><i class="icon fa fa-check"></i> Excelente!!!</h4>
-	                {{Session::get('message')}}
-              </div>
-			</section>
-		</div>
-@endif
-
 @section('content')
 
 		<div class="content-wrapper">
 			<section class="content-header">
+		    	@if (Session::has('message'))
+							<!-- <section class="content-header">
+								<h1>Guardado de los Datos</h1>
+							</section> -->
+							<!-- <section class="content"> -->
+								<div class="alert alert-success alert-dismissible">
+					                	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+					                	<h4><i class="icon fa fa-check"></i> Excelente!!!</h4>
+					                {{Session::get('message')}}
+				              </div>
+							<!-- </section> -->
+						<!-- </div> -->
+				@endif
 		      <h1>
 		        Busqueda de Usiarios
 		      </h1>

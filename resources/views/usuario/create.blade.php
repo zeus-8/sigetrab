@@ -15,7 +15,6 @@
 
     <!-- Main content -->
     <section class="content">
-
       <div class="register-box">
         <!--  <div class="register-logo">
           <a href="#"><b>SIGETRAB</b>SGT</a>
@@ -26,12 +25,14 @@
           <!-- <p class="login-box-msg">Nuevo Miembro</p> -->
 
           {!! Form::open(['route'=>'usuario.store', 'method'=>'POST']) !!}
-            
+             @include('usuario.form.user')
+             <div class="form-group">
+              {!! form::submit('Guardar', ['class'=>'btn btn-primary']) !!}
+            </div>
           {!! Form::close() !!}
         </div>
         <!-- /.form-box -->
       </div>
-      @include('usuario.form.user')
     </section>
     <!-- /.content -->
   </div>

@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->integer('telef1')->unsigned();
             $table->integer('telef2')->unsigned();
             $table->string('email')->unique();
+            $table->string('direccion');
             $table->string('password');
             $table->string('name_user');
             $table->boolean('active')->default(true); //con este campo se activa o desactiva al usuario

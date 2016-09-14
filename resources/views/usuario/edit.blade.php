@@ -27,6 +27,9 @@
 
           {!! Form::model($user,['route'=>['usuario.update', $user->id], 'method'=>'PUT']) !!}
              @include('usuario.form.user')
+             <div class="form-group">
+              {!! form::submit('Modificar', ['class'=>'btn btn-primary']) !!}
+            </div>
           {!! Form::close() !!}
         </div>
         <!-- /.form-box -->
