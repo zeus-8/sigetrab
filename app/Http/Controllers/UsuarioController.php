@@ -3,9 +3,8 @@
 namespace sigetrab\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\Request\UserCreateRequest;
-
-use sigetrab\Http\Requests;
+// use Illuminate\Http\Request\UserCreateRequest;
+use sigetrab\Http\Requests\UserCreateRequest;
 use sigetrab\Http\Controllers\Controller;
 use sigetrab\User;
 use Session;
@@ -88,7 +87,7 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UserUpdateRequest $request, $id)
     {
         $user = User::find($id);
         $user->fill($request->all());

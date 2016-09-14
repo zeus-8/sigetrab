@@ -24,7 +24,7 @@
         <div class="register-box-body">
           <div class="box-header whith-border"><h3 class="box-title">Nuevo Usuario</h3></div>
           <!-- <p class="login-box-msg">Nuevo Miembro</p> -->
-
+			@include('alerts.Request')
           {!! Form::model($user,['route'=>['usuario.update', $user->id], 'method'=>'PUT']) !!}
              @include('usuario.form.user')
              <div class="form-group">

@@ -23,7 +23,7 @@
         <div class="register-box-body">
           <div class="box-header whith-border"><h3 class="box-title">Nuevo Usuario</h3></div>
           <!-- <p class="login-box-msg">Nuevo Miembro</p> -->
-
+          @include('alerts.Request')
           {!! Form::open(['route'=>'usuario.store', 'method'=>'POST']) !!}
              @include('usuario.form.user')
              <div class="form-group">

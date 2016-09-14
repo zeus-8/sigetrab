@@ -1,0 +1,35 @@
+[33mcommit 2cc40db8326d3742816d30b56b2bcde58e715f10[m
+Author: @zeus-8 <sierra.juan.1982@gmail.com>
+Date:   Wed Sep 14 01:06:18 2016 -0430
+
+    VERSION CON LOS METODOS CREAR, LISTAR Y MODIFICAR CORECTAENTE SE COMIENZA A TRABAJAR CON LOS REQUEST-SE DEJA LA ESTRUCTURA DEL MISMO
+
+[33mcommit e9891cac0f4e81907561661ba15ff7692e2cd813[m
+Author: @zeus-8 <sierra.juan.1982@gmail.com>
+Date:   Wed Sep 14 00:46:55 2016 -0430
+
+    VERSION CON LOS METODOS CREAR, LISTAR Y MODIFICAR CORECTAENTE
+
+[33mcommit 98f3abf35f9aae5c3c0ccd30accbe4f92a4acad1[m
+Author: @zeus-8 <sierra.juan.1982@gmail.com>
+Date:   Tue Sep 13 12:50:02 2016 -0430
+
+    VERSION CON LOS METODOS DE CREAR LISTAR Y MODIFICAR LISTOS. FALTA QUE REDIRECCIONE A LISTAR Y QUE DE MENSAJE DE MODIFICADO Y GUARDADO
+
+[33mcommit 12f7c7f649d3a9b47be5eafbee2683ab9ccb010b[m
+Author: @zeus-8 <sierra.juan.1982@gmail.com>
+Date:   Tue Sep 13 02:16:30 2016 -0430
+
+    METODO INDEX LISTO: PAGINACION, BUSQUEDA Y SELECT DE ACCTION
+
+[33mcommit fcb35b34b8b0d9c956ae4eb9972df6c5c8cee182[m
+Author: @zeus-8 <sierra.juan.1982@gmail.com>
+Date:   Mon Sep 12 22:30:47 2016 -0430
+
+    GUARDADO DE USUARIO COMPLETO COMIENSO DEL INDEX DE USUARIO CON TABLA DINAMICA
+
+[33mcommit ab0fa402559dd4df7f9e70d9832b006add749ffa[m
+Author: @zeus-8 <sierra.juan.1982@gmail.com>
+Date:   Fri Sep 9 23:25:33 2016 -0430
+
+    proyecto base preparacion de registro de usuario
