@@ -13,7 +13,7 @@ class UserCreateRequest extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,14 @@ class UserCreateRequest extends Request
     public function rules()
     {
         return [
-            //
+            'nombre' => 'required', 
+            'apellido' => 'required', 
+            'ci' => 'required', 
+            'telef1' => 'required', 
+            'telef2' => 'required', 
+            'email' => 'required|unique:users,email', 
+            'direccion' => 'required', 
+            'rol' => 'required',
         ];
     }
 }
