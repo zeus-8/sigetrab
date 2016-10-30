@@ -8,6 +8,7 @@ use Session;
 use sigetrab\Http\Controllers\Controller;
 use sigetrab\Http\Requests;
 use sigetrab\Http\Requests\UserCreateRequest;
+use sigetrab\Http\Requests\UserUpdateRequest;
 use sigetrab\User;
 class UsuarioController extends Controller
 {
@@ -87,7 +88,7 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UserUpdateRequest $request, $id)
     {
         $user = User::find($id);
         $user->fill($request->all());

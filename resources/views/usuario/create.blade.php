@@ -15,23 +15,23 @@
 
     <!-- Main content -->
     <section class="content">
-      <div class="register-box">
-        <!--  <div class="register-logo">
-          <a href="#"><b>SIGETRAB</b>SGT</a>
-        </div>-->
-
-        <div class="register-box-body">
-          <div class="box-header whith-border"><h3 class="box-title">Nuevo Usuario</h3></div>
-          <!-- <p class="login-box-msg">Nuevo Miembro</p> -->
-          @include('usuario.message.message')
-          {!! Form::open(['route'=>'usuario.store', 'method'=>'POST']) !!}
-             @include('usuario.form.user')
-             <div class="form-group">
-              {!! form::submit('Guardar', ['class'=>'btn btn-primary']) !!}
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+        <div class="box box-primary">
+            <div class="register-box-body">
+              <div class="box-header whith-border"><h3 class="box-title">Nuevo Usuario</h3></div>
+              <!-- <p class="login-box-msg">Nuevo Miembro</p> -->
+              @include('usuario.message.message')
+              {!! Form::open(['route'=>'usuario.store', 'method'=>'POST']) !!}
+                 @include('usuario.form.user')
+                 <div class="form-group">
+                  {!! form::submit('Guardar', ['class'=>'btn btn-primary']) !!}
+                </div>
+              {!! Form::close() !!}
             </div>
-          {!! Form::close() !!}
+          </div>
+          <!-- /.form-box -->
         </div>
-        <!-- /.form-box -->
       </div>
     </section>
     <!-- /.content -->

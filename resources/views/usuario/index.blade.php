@@ -26,7 +26,7 @@
 		    <section class="content">
 		    	<div class="row">
 			        <div class="col-xs-12">
-			        	<div class="box">
+			        	<div class="box box-primary">
 				            <div class="box-header">
 				            	<h3 class="box-title">Usuarios Registrados</h3>
 				            </div>
@@ -51,8 +51,8 @@
 												<td>{{$user->name_user}}</td>
 												<td>
 													<div class="btn-group">
-									                	<button type="button" class="btn btn-success">--Seleccione--</button>
-									                	<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+									                	<button type="button" class="btn btn-primary">--Seleccione--</button>
+									                	<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
 										                    <span class="caret"></span>
 										                    <span class="sr-only"></span>
 									                	</button>
