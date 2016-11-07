@@ -36,6 +36,7 @@ class UserUpdateRequest extends Request
         
 
         return [
+            
            'nombre' => 'required', 
             'apellido' => 'required', 
             'ci' => 'required|unique:users,ci,' . $this->route->getParameter('usuario'), 

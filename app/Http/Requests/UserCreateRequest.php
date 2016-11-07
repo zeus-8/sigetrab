@@ -26,12 +26,12 @@ class UserCreateRequest extends Request
         return [
             'nombre' => 'required|string|max:50|min:4|regex:/^[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9\.\- ]+$/i', 
             'apellido' => 'required|string|max:50|min:4|regex:/^[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9\.\- ]+$/i', 
-            'ci' => 'required|unique:users,ci', 
-            'telef1' => 'required', 
-            'telef2' => 'required', 
+            'ci' => 'required|numeric|digits_between:7,8|unique:users,ci', 
+            'telef1' => 'required|numeric', 
+            'telef2' => 'required|numeric', 
             'email' => 'required|unique:users,email', 
             'direccion' => 'required|string|max:50|min:4|regex:/^[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9\.\- ]+$/i', 
-            'rol' => 'required|in:Administrador,Profesor,Alumno',
+            'rol' => 'required|in:1,2,3,4',
         ];
     }
 }

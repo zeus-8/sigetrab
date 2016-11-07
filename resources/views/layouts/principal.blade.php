@@ -11,6 +11,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <meta name="_token" content="{!! csrf_token() !!}"/>
+  {{-- <link rel="icon" type="image/png" href="/bee.png" /> --}}
   <!-- Bootstrap 3.3.6 -->
   {!!Html::style('/bootstrap/css/bootstrap.min.css')!!}
     <!-- Font Awesome -->
@@ -66,10 +67,10 @@ desired effect
     <!-- Logo -->
     <a href="#" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>LT</span>
+      <span class="logo-mini"><i class="fa fa-connectdevelop"></i></span>
       <!-- logo for regular state and mobile devices -->
       <!-- variable para identificar el usuario -->
-      <span class="logo-lg"><b>Jsierra</b> SGT</span>
+      <span class="logo-lg"><b>Beehive</b> Project <i class="fa fa-connectdevelop"></i></span>
     </a>
 
     <!-- Header Navbar -->
@@ -83,7 +84,7 @@ desired effect
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
           <!-- seccion de mensajes -->
-          <li class="dropdown messages-menu">
+          {{-- <li class="dropdown messages-menu">
             <!-- Menu toggle button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-envelope-o"></i>
@@ -116,11 +117,11 @@ desired effect
               </li>
               <li class="footer"><a href="#">See All Messages</a></li>
             </ul>
-          </li>
+          </li> --}}
           <!-- /.messages-menu -->
 
           <!-- Tasks Menu -->
-          <li class="dropdown tasks-menu">
+          {{-- <li class="dropdown tasks-menu">
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-graduation-cap"></i>
@@ -186,7 +187,7 @@ desired effect
                 <a href="#">Ir a Programacion</a>
               </li>
             </ul>
-          </li>
+          </li> --}}
           <!-- User Account Menu -->
           <li class="dropdown user user-menu">
             <!-- Menu Toggle Button -->
@@ -203,24 +204,24 @@ desired effect
                 <img src="/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  Juan L. Sierra M. - Web Developer
+                  Usuario de Ejemplo. - Web Developer
                   <small>Fecha de inicio</small>
                 </p>
               </li>
               <!-- Menu Body -->
               <li class="user-body">
-                <div class="row">
+                {{-- <div class="row">
                   <div class="col-xs-4 text-center">
                     <a href="#">Facturas</a>
                   </div>
-                  <!--  
+                    
                   <div class="col-xs-4 text-center">
                     <a href="#">Sales</a>
                   </div>
                   <div class="col-xs-4 text-center">
                     <a href="#">Friends</a>
                   </div>
-                </div>-->
+                </div> --}}
                 <!-- /.row -->
               </li>
               <!-- Menu Footer-->
@@ -251,7 +252,7 @@ desired effect
     <section class="sidebar">
 
       <!-- Sidebar user panel (optional) -->
-      <div class="user-panel">
+      {{-- <div class="user-panel">
         <div class="pull-left image">
           <img src="/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
@@ -260,7 +261,7 @@ desired effect
           <!-- Status -->
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
-      </div>
+      </div> --}}
 
       <!-- search form (Optional) -->
       <!--  
@@ -277,25 +278,37 @@ desired effect
 
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu">
-        <li class="header"><i class="fa fa-bank" ></i> Menu</li>
+
+        <li class="header"><i class="fa fa-users" ></i> USUARIOS</li>
         <!-- Optionally, you can add icons to the links -->
         <li class="treeview">
-          <a href="#"><i class="fa fa-users"></i> <span>Usuario</span>
+          <a href="#"><i class="fa fa-map-signs"></i> <span>Gestion</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{!! URL::to('/usuario/create') !!}"><i class="fa fa-user-plus">Agregar</i></a></li>
-            <li><a href="{!! URL::to('/usuario') !!}"><i class="fa fa-list-ol">Usuarios</i></a></li>
+            <li><a href="{!! URL::to('/usuario/create') !!}"><i class="fa fa-mortar-board"> Roles</i></a></li>
+            <li><a href="{!! URL::to('/usuario') !!}"><i class="fa fa-unlock"> Permisos</i></a></li>
           </ul>
         </li>
-        <li><a href="#"><i class="fa fa-barcode"></i> <span>Productos</span></a></li>
+        <li class="treeview">
+          <a href="#"><i class="fa fa-user"></i> <span>Usuario</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{!! URL::to('/usuario/create') !!}"><i class="fa fa-user-plus"> Agregar</i></a></li>
+            <li><a href="{!! URL::to('/usuario') !!}"><i class="fa fa-list-ol"> Usuarios</i></a></li>
+          </ul>
+        </li>
+       {{-- <li><a href="#"><i class="fa fa-barcode"></i> <span>Productos</span></a></li>
         <li><a href="#"><i class="fa fa-graduation-cap"></i> <span>Cursos y Gurpos</span></a></li>
+         <li><a href="#"><i class="fa fa-barcode"></i> <span>link</span></a></li>
         <li><a href="#"><i class="fa fa-barcode"></i> <span>link</span></a></li>
         <li><a href="#"><i class="fa fa-barcode"></i> <span>link</span></a></li>
-        <li><a href="#"><i class="fa fa-barcode"></i> <span>link</span></a></li>
-        <li><a href="#"><i class="fa fa-barcode"></i> <span>link</span></a></li>
+        <li><a href="#"><i class="fa fa-barcode"></i> <span>link</span></a></li> --}}
       </ul>
       <!-- /.sidebar-menu -->
     </section>
